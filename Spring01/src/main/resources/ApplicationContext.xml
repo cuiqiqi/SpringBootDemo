@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+   
+   <!-- 1、xml的方式创建bean -->
+	     <!-- 属性setter方法注入 -->
+			 <bean id="people" class="com.taiji.bean.People">
+			      <!-- 可以将Value值直接赋值在people类中的属性上 -->
+			      <!-- <property name="name" value="小明"></property> -->
+				<!-- <property name="age" value="24"></property> --> 
+			</bean> 
+	     <!-- 当两个方法一起使用时构造器先执行 -->
+		 <!-- 构造器注入 -->
+			 <bean id="user" class="com.taiji.bean.User">
+				<constructor-arg type="java.lang.String" value="人类"></constructor-arg>
+				<constructor-arg ref="people"></constructor-arg>
+			</bean> 
+		 
+	<!--2、 注解方式 的方式创建bean，以Car类为例-->
+	 <context:component-scan base-package="com.taiji.bean"></context:component-scan> 
+	
+</beans>

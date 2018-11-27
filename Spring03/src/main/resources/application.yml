@@ -1,0 +1,21 @@
+#name: Phil
+hello: Good Evening
+
+spring:
+  profiles:
+    active:
+    - one
+
+---
+spring:
+  profiles: goodbye,dev
+name: Everyone
+
+---
+spring:
+  profiles: one
+name: David
+  
+---
+
+ 
